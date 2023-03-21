@@ -5,22 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Says</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="numbersBox"></div>
-    <div id="time"></div>
-    <div id="input">
-        <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="Inserisci il numero">
-        <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="Inserisci il numero">
-        <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="Inserisci il numero">
-        <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="Inserisci il numero">
-        <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="Inserisci il numero">
+    <div id="preCountdown" class="text-center pt_10">
+        <h1 id="advice">Press play and remember the numbers for 10 seconds!</h1>
+        <button id="btnPlay" class="btn btn-outline-secondary mt-5" type="button">play</button>
+        <div id="numbersBox" class="mt-5 fs-1"></div>
+        <div id="time" class="mt-5 fs-3"></div>
     </div>
-    <div id="messages"></div>
+    <div id="postCountdown" class="none text-center pt_10">
+        <div id="input">
+            <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="enter the number">
+            <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="enter the number">
+            <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="enter the number">
+            <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="enter the number">
+            <input class="rounded-3" type="number" name="number" id="number" min="1" max="5" placeholder="enter the number">
+        </div>
+        <div id="btn_box" class="mt-5">
+            <button id="btnClickMe" class="btn btn-outline-secondary" type="button">click me!</button>
+            <button id="btnCancel" class="btn btn-outline-secondary" type="button">cancel</button>
+        </div>
+        <div id="messages" class="mt-5 fs-1"></div>
+    </div>
 
 
     <script type="text/javascript" src="./js/script.js"></script>
-    <script type="text/javascript" src="./js/utility.js"></script>
 </body>
 </html>
