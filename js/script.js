@@ -5,19 +5,22 @@ Dopo 30 secondi i numeri scompaiono e l'utente deve inserire, i numeri che ha vi
 Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 */
 
-function randomNumbers(numNumbers) {
+function randomNumbers(numNumbers, max) {
     const numbersBox = document.getElementById('numbersBox');
     const numbers = [];
     while (numbers.length < numNumbers) {
-        const number = getRndInteger(1, 5);
+        const number = getRndInteger(1, max);
+        // console.log(number);
         if (!numbers.includes(number)) {
             numbers.push(number);
         };
-        console.log(numbers);
+        // console.log(numbers);
     };
     numbersBox.innerHTML = numbers;
     return numbers;
 }
+randomNumbers(5);
+
 
 // const countdown = document.getElementById('time');
 // let count = 10;
