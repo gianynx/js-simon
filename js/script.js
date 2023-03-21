@@ -13,9 +13,9 @@ function randomNumbers(numNumbers) {
         if (!numbers.includes(number)) {
             numbers.push(number);
         };
-        // console.log(numbers);
+        console.log(numbers);
     };
-    numbersBox.innerHTML = numbers.join(" ");
+    numbersBox.innerHTML = numbers;
     return numbers;
 }
 
@@ -31,3 +31,6 @@ function randomNumbers(numNumbers) {
 //     }
 //     countdown.innerHTML = count;
 // }, 1000);
+
+const inputValue = document.querySelectorAll('#input');
+
