@@ -1,0 +1,33 @@
+/*
+Consegna:
+Visualizzare in pagina 5 numeri casuali. Da lì parte un timer di 30 secondi.
+Dopo 30 secondi i numeri scompaiono e l'utente deve inserire, i numeri che ha visto precedentemente.
+Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
+*/
+
+function randomNumbers(numNumbers) {
+    const numbersBox = document.getElementById('numbersBox');
+    const numbers = [];
+    while (numbers.length < numNumbers) {
+        const number = getRndInteger(1, 5);
+        if (!numbers.includes(number)) {
+            numbers.push(number);
+        };
+        // console.log(numbers);
+    };
+    numbersBox.innerHTML = numbers.join(" ");
+    return numbers;
+}
+
+// const countdown = document.getElementById('time');
+// let count = 10;
+// countdown.innerHTML = count;
+// const time = setInterval(() => {
+//     if(count === 1) {
+//         clearInterval(time);
+//         count = 'Inserisci i numeri che hai visto precedentemente!';
+//     } else {
+//         count--;
+//     }
+//     countdown.innerHTML = count;
+// }, 1000);
