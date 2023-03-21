@@ -89,5 +89,3 @@ function reset() {
         input[a].value = '';
     }
 }
-
-
