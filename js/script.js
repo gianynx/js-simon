@@ -6,8 +6,6 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 */
 
 const playBtn = document.getElementById('btnPlay');
-const numbersBox = document.getElementById('numbersBox');
-const countdown = document.getElementById('time');
 const input = document.querySelectorAll ('input[name="number"]');
 const clickBtn = document.getElementById('btnClickMe');
 const cancelBtn = document.getElementById('btnCancel');
@@ -17,6 +15,7 @@ function getRndInteger(min, max) {
 }
 
 function randomNumber(numNumbers) {
+    const numbersBox = document.getElementById('numbersBox');
     const numbers = [];
     while (numbers.length < numNumbers) {
         const number = getRndInteger(1, 5);
@@ -29,26 +28,26 @@ function randomNumber(numNumbers) {
 }
 
 function COUNTDOWN() {
+    const countdown = document.getElementById('time');
     let count = 10;
     countdown.innerHTML = count;
     const time = setInterval(() => {
         if (count === 1) {
             clearInterval(time);
-            count = 'Inserisci i numeri che hai visto precedentemente!';
             const preCount = document.getElementById('preCountdown');
             preCount.classList.add('none');
             const postCount = document.getElementById('postCountdown');
             postCount.classList.remove('none');
         } else {
             count--;
-        }
+        };
         countdown.innerHTML = count;
     }, 1000);
 }
 
 playBtn.addEventListener('click', play);
 function play() {
-    var randomArray = randomNumber(5);
+    let randomArray = randomNumber(5);
     COUNTDOWN();
     numbersBox.classList.remove('none');
     clickBtn.addEventListener('click', function () {
@@ -56,7 +55,7 @@ function play() {
     });
 }
 
-// creo la function 'generate' per controllare se combaciano i valori input con i valori array
+// creo la function 'generate' per controllare se combaciano i valori input che inserisce l'user con i valori generati dall'array
 function generate(arrayToCheck) {
     const userNumbers = [];
     let allValues = true;
@@ -67,25 +66,25 @@ function generate(arrayToCheck) {
             break;
         } else {
             userNumbers.push(value);
-        }
+        };
     }
-
+// se tutti i valori sono numeri interi validi, la funzione confronta l'input dell'utente con l'array originale
     if (allValues) {
         let success = true;
         for (let i = 0; i < arrayToCheck.length; i++) {
             if (arrayToCheck[i] !== userNumbers[i]) {
                 success = false;
                 break;
-            }
-        }
+            };
+        };
         const message = document.getElementById('messages');
         message.innerHTML = success ? `You won!` : `You lost!`;
-    }
+    };
 }
 
 cancelBtn.addEventListener('click', reset);
 function reset() {
     for (let a = 0; a < input.length; a++) {
         input[a].value = '';
-    }
+    };
 }
